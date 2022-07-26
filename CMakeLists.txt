@@ -63,7 +63,7 @@ add_custom_command(TARGET ${CMAKE_PROJECT_NAME} POST_BUILD
 
     COMMAND if $<CONFIG:RelWithDebInfo>==1 (
         "${CMAKE_COMMAND}" -E copy
-            "$<TARGET_FILE_BASE_NAME:${CMAKE_PROJECT_NAME}>.pdb"
+            "$<TARGET_PDB_FILE:${CMAKE_PROJECT_NAME}>"
             "${RELEASE_DIR}/obs-plugins/${ARCH_NAME}"
     )
 
